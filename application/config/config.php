@@ -17,7 +17,7 @@
 |
 */
 $config['base_url'] = 'http://localhost:8080/nova_light';
-
+//$config['base_url'] = 'http://simone.ruianderson.com.br/nova_light';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -28,6 +28,7 @@ $config['base_url'] = 'http://localhost:8080/nova_light';
 | variable so that it is blank.
 |
 */
+//$config['index_page'] = 'index.php';
 $config['index_page'] = 'index.php';
 
 /*
