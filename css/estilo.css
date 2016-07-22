@@ -154,6 +154,21 @@ html, body {
 
 /* Fim - Pagina Index */
 
+@media screen and (max-width: 465px) {
+    #id_div_index h1 {
+        font-size: 20px;
+    }
+    
+    #id_div_index h4 {
+        font-size: 14px;
+    }
+    
+    .navbar-default .navbar-brand {
+    color: white;
+    font-size: 22px;
+}
+}
+
 @media screen and (max-width: 768px) {
     #id_containerFluid {
         margin-left: 40px;
