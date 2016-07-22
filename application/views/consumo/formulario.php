@@ -9,7 +9,7 @@
 
             <h1>Consumo Mes</h1>
             <?php
-            echo form_open("consumoMes_control/salvaConsumo");
+            echo form_open("consumomes_control/salvaConsumo");
 
             echo form_label("Data", "data");
             echo form_input(array(

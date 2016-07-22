@@ -17,9 +17,11 @@ class Tarifas_control extends CI_Controller {
     public function formulario() {
         $tarifas = $this->tarifas_model->buscaUltimaTarifa();
         $lista = $this->listarTarifas();
-        $dados = array("tarifas" => $tarifas, "listaTarifas" => $lista);
+        $dados = array("tarifas" => $tarifas, "listatarifas" => $lista);
+        
+        
                 
-        if($tarifas) {           
+        if($dados) {           
             $this->load->template("tarifas/registroTarifas.php", $dados);
         } else {
             $this->load->template("tarifas/registroTarifas.php");

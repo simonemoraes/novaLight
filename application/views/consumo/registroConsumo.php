@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-12">
 
-            <form method="post" action="<?= base_url("index.php/consumoMes_control/salvaConsumo") ?>">
+            <form method="post" action="<?= base_url("index.php/consumomes_control/salvaConsumo") ?>">
 
                 <div class="panel panel-default panel_registros" id="panel_registroConsumo">
                     <div class="panel-heading">Registro de Consumo Diário</div>
@@ -29,7 +29,7 @@
                                     <label for="medida">Medida</label>
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-8">
-                                    <input required="" type="number" class="form-control" name="medida" id="medida" maxlength="255" placeholder="Medida">
+                                    <input required="" min="0" type="number" class="form-control" name="medida" id="medida" maxlength="255" placeholder="Medida">
                                 </div>
 
                             </div>
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-8">
 
-                                    <input required="" type="number" value="<?= $consumo["medida_anterior"] ?>" class="form-control" name="medida_anterior" id="medida_anterior" maxlength="255" placeholder="Medida Anterior">
+                                    <input required="" min="0" type="number" value="<?= $consumo["medida_anterior"] ?>" class="form-control" name="medida_anterior" id="medida_anterior" maxlength="255" placeholder="Medida Anterior">
 
                                 </div>
 

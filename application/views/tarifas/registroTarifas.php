@@ -16,7 +16,7 @@
                                 </div>
 
                                 <div class="col-md-10 col-sm-10 col-xs-7">
-                                    <input step="any" required="" type="number" class="form-control" name="tarifaNormal" id="tarifaNormal" maxlength="255" placeholder="Tarifa Normal">
+                                    <input step="any" min="0" required="" type="number" class="form-control" name="tarifaNormal" id="tarifaNormal" maxlength="255" placeholder="Tarifa Normal">
                                 </div>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                                     <label for="tarifaAmarela">Tarifa Amarela</label>
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-7">
-                                    <input required="" type="number" class="form-control" name="tarifaAmarela" id="medida" maxlength="255" placeholder="Tarifa Amarela">
+                                    <input required="" min="0" type="number" class="form-control" name="tarifaAmarela" id="medida" maxlength="255" placeholder="Tarifa Amarela">
                                 </div>
 
                             </div>
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-7">
 
-                                    <input required="" type="number" value="" class="form-control" name="tarifaVermelha" id="tarifaVermelha" maxlength="255" placeholder="Tarifa Vermelha">
+                                    <input required="" min="0" type="number" value="" class="form-control" name="tarifaVermelha" id="tarifaVermelha" maxlength="255" placeholder="Tarifa Vermelha">
 
                                 </div>
 
@@ -56,7 +56,7 @@
                                     <label for="taxaIluminacao">Taxa de Iluminação</label>
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-7">
-                                    <input step="any" required="" type="number" class="form-control" name="taxaIluminacao" id="taxaIluminacao" maxlength="255" placeholder="Taxa de Iluminação">
+                                    <input step="any" min="0" required="" type="number" class="form-control" name="taxaIluminacao" id="taxaIluminacao" maxlength="255" placeholder="Taxa de Iluminação">
                                 </div>
 
                             </div>
@@ -86,7 +86,7 @@
                                         <th class="align_th" id="tx_iluminacao"><strong>Taxa Iluminação</strong></th>
                                     </tr>
 
-                                    <?php foreach ($listaTarifas as $value): ?>
+                                    <?php foreach ($listatarifas as $value): ?>
                                         <tr>
                                             <td class="align_td"><?= $value["id"] ?></td>
                                             <td class="align_td"><?= number_format($value["tarifaNormal"],2) ?></td>
@@ -94,7 +94,7 @@
                                             <td class="align_td"><?= number_format($value["tarifaVermelha"],2) ?></td>
                                             <td class="align_td"><?= number_format($value["taxaIluminacao"],2) ?></td>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php endforeach ?>
 
                                 </tbody>
                             </table>

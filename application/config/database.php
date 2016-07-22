@@ -48,6 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+//$db['default']['hostname'] = 'ruianderson.com.br';
+//$db['default']['username'] = 'ruiand_simone';
+//$db['default']['password'] = '@sbvr4230@';
+//$db['default']['database'] = 'ruiand_novalight';
+
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '442332si';

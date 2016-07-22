@@ -2,8 +2,12 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="<?= base_url("css/bootstrap.min.css") ?>">
-        <link rel="stylesheet" href="<?= base_url("css/estilo.css") ?>">
+        
+        <title>NovaLight</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="<?= base_url("css/bootstrap.min.css") ?>" media = "all">
+        <link rel="stylesheet" href="<?= base_url("css/estilo.css") ?>" media = "all">
     </head>
     
     <body>
@@ -26,7 +30,8 @@
                 <div class="collapse navbar-collapse" id="id_navbarCollapse">
                     
                     <ul class="nav navbar-nav" id="id_ulNavbar">
-                        <li><a href="<?= base_url("index.php/consumoMes_control/formulario") ?>">Consumo</a></li>
+                        <li><a href="<?= base_url() ?>">Home</a></li>
+                        <li><a href="<?= base_url("index.php/consumomes_control/formulario") ?>">Consumo</a></li>
                         <li><a href="<?= base_url("index.php/tarifas_control/formulario") ?>">Tarifa</a></li>
                         <li><a href="#">Calculo Conta</a></li>
                     </ul>
