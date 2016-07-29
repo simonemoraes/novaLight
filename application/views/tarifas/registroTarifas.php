@@ -1,3 +1,5 @@
+
+
 <section id="id_sectionRegistroTarifas">
 
     <div class="container">
@@ -28,7 +30,7 @@
                                     <label for="tarifaAmarela">Tarifa Amarela</label>
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-7">
-                                    <input required="" min="0" type="number" class="form-control" name="tarifaAmarela" id="medida" maxlength="255" placeholder="Tarifa Amarela">
+                                    <input step="any" required="" min="0" type="number" class="form-control" name="tarifaAmarela" id="medida" maxlength="255" placeholder="Tarifa Amarela">
                                 </div>
 
                             </div>
@@ -42,7 +44,7 @@
                                 </div>
                                 <div class="col-md-10 col-sm-10 col-xs-7">
 
-                                    <input required="" min="0" type="number" value="" class="form-control" name="tarifaVermelha" id="tarifaVermelha" maxlength="255" placeholder="Tarifa Vermelha">
+                                    <input step="any" required="" min="0" type="number" value="" class="form-control" name="tarifaVermelha" id="tarifaVermelha" maxlength="255" placeholder="Tarifa Vermelha">
 
                                 </div>
 
@@ -89,9 +91,9 @@
                                     <?php foreach ($listatarifas as $value): ?>
                                         <tr>
                                             <td class="align_td"><?= $value["id"] ?></td>
-                                            <td class="align_td"><?= number_format($value["tarifaNormal"],2) ?></td>
-                                            <td class="align_td"><?= number_format($value["tarifaAmarela"],2) ?></td>
-                                            <td class="align_td"><?= number_format($value["tarifaVermelha"],2) ?></td>
+                                            <td class="align_td"><?= number_format($value["tarifaNormal"],4) ?></td>
+                                            <td class="align_td"><?= number_format($value["tarifaAmarela"],4) ?></td>
+                                            <td class="align_td"><?= number_format($value["tarifaVermelha"],4) ?></td>
                                             <td class="align_td"><?= number_format($value["taxaIluminacao"],2) ?></td>
                                         </tr>
                                     <?php endforeach ?>

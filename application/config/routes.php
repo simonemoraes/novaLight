@@ -38,9 +38,10 @@
 |
 */
 
-$route['default_controller'] = "consumoMes_control";
+$route['default_controller'] = "consumomes_control";
 $route['404_override'] = '';
-$route['formulario'] = "consumoMes_control/formulario"; 
+$route['formulario'] = "consumomes_control/formulario"; 
+$rout['teste'] = "consumomes_control/teste";
 
 
 

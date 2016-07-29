@@ -33,6 +33,10 @@ class Tarifas_control extends CI_Controller {
         $this->salvaTarifas();
     }
     
+    public function ultimaTarifaInserida(){
+        return $this->tarifas_model->buscaUltimaTarifa();
+    }
+    
     private function salvaTarifas() {
 
         $tarifas = array(
