@@ -5,6 +5,9 @@ if (!defined('BASEPATH'))
 
 class ConsumoMes_control extends CI_Controller {
 
+    var $html_mensagem = "";
+    var $status = "";
+
     function __construct() {
         parent::__construct();
 
@@ -89,28 +92,87 @@ class ConsumoMes_control extends CI_Controller {
 
         $dtInic = $this->input->post("dataInicial");
         $dtFinal = $this->input->post("dataFinal");
-
-        $totalKwh = $this->totalKwhPorPeriodo($dtInic, $dtFinal);
-
-        echo $totalKwh;
-
-        $calculo = $this->calculoPorTarifa($totalKwh);
-        $retornoDescricao = $this->criaDescricao();
+        $totalKwh = "";
+        $calculo = array();
+        $retornoDescricao = array();
 
         $dados = array(
             "calculos" => array(
                 "calculo" => $calculo,
-                "descricao" => $retornoDescricao)
+                "descricao" => $retornoDescricao,
+                "data" => "",
+                "totalKwh" => $totalKwh,
+                "html_mensagem" => $this->html_mensagem
+            )
         );
 
-        if ($totalKwh != 0) {
+        $mensagem = array(
+            "status" => $this->status
+        );
+
+
+        $data = array(
+            "dataInicial" => $dtInic,
+            "dataFinal" => $dtFinal
+        );
+
+        if ($data["dataInicial"] > $data["dataFinal"]) {
+            $this->status = "erroData";
+            $mensagem["status"] = $this->status;
+
+            $this->html_mensagem = $this->load->view("mensagens/mensagemCalculoConta.php", $mensagem, true);
+
+            $dados['calculos']['html_mensagem'] = $this->html_mensagem;
 
             $this->load->template("consumo/calculoConta.php", $dados);
         } else {
-//            echo "<h1 class='alert alert-danger'>Favor informar um período válido!!</h1>";
-            $this->load->template("consumo/calculoConta.php", $dados);
+
+            if ($data['dataInicial'] == false || $data['dataFinal'] == false) {
+
+                $this->status = "warning";
+                $mensagem["status"] = $this->status;
+
+                $this->html_mensagem = $this->load->view("mensagens/mensagemCalculoConta.php", $mensagem, true);
+
+                $dados['calculos']['html_mensagem'] = $this->html_mensagem;
+
+                $this->load->template("consumo/calculoConta.php", $dados);
+            } else {
+
+                $data_valida = $this->consumomes_model->retorna_dataValida($data["dataInicial"], $data["dataFinal"]);
+                $dados['calculos']['data'] = $data_valida;
+
+                $totalKwh = $this->totalKwhPorPeriodo($dtInic, $dtFinal);
+
+                $calculo = $this->calculoPorTarifa($totalKwh);
+                $retornoDescricao = $this->criaDescricao();
+                $dados['calculos']['calculo'] = $calculo;
+                $dados['calculos']['descricao'] = $retornoDescricao;
+                $dados['calculos']['totalKwh'] = $totalKwh;
+
+                if (empty($data_valida)) {
+
+                    $this->status = "danger";
+                    $mensagem["status"] = $this->status;
+
+                    $this->html_mensagem = $this->load->view("mensagens/mensagemCalculoConta.php", $mensagem, true);
+
+                    $dados['calculos']['html_mensagem'] = $this->html_mensagem;
+
+                    $this->load->template('consumo/calculoConta.php', $dados);
+                } else {
+
+                    $this->status = "success";
+                    $mensagem["status"] = $this->status;
+
+                    $this->html_mensagem = $this->load->view("mensagens/mensagemCalculoConta.php", $mensagem, true);
+
+                    $dados['calculos']['html_mensagem'] = $this->html_mensagem;
+
+                    $this->load->template('consumo/calculoConta.php', $dados);
+                }
+            }
         }
-        
     }
 
     /* Função privada que retorna o total de kwh dentro de um periodo */

@@ -1,12 +1,16 @@
 
 
 <section id="id_sectionRegistroConsumo">
+    
+    
 
     <div class="container">
         <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-12">
 
             <form method="post" action="<?= base_url("index.php/consumomes_control/salvaConsumo") ?>">
 
+                <?php include('mensagemRegistroConsumo.php') ?>
+                
                 <div class="panel panel-default panel_registros" id="panel_registroConsumo">
                     <div class="panel-heading">Registro de Consumo Diário</div>
                     <?php if ($consumo == NULL) : ?>

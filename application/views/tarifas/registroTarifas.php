@@ -1,7 +1,7 @@
 
 
 <section id="id_sectionRegistroTarifas">
-
+  
     <div class="container">
         <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-12">
 

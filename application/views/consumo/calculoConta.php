@@ -1,5 +1,3 @@
-
-
 <section id="id_sectionCalculoConta">
 
     <div class="container">
@@ -7,6 +5,12 @@
         <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-12">
 
             <form method="post" action="<?= base_url("index.php/consumomes_control/calculoContaLuz") ?>">
+
+
+                <?php if (!$calculos["data"]) : ?>
+                    <?= $calculos["html_mensagem"] ?>
+                <?php endif; ?>
+
 
                 <div class="panel panel-default panel_registros" id="panel_registroConsumo">
                     <div class="panel-heading">Calculo da Conta por Período</div>
@@ -26,6 +30,8 @@
                                     <label for="data">Data Final:</label>
                                 </div>
 
+
+
                                 <div class="col-md-4 col-sm-4 col-xs-8">
                                     <input required="" type="date" class="form-control" step="" value="" name="dataFinal" id="dataFinal" maxlength="255" placeholder="Data Final">
                                 </div>
@@ -43,61 +49,52 @@
                         </div>
 
                         <div>
+                            
+                            <?php if ($calculos["data"]) : ?>
+                                <?= $calculos["html_mensagem"] ?>
+                            <?php endif; ?>
+                            
+                            <ul class="nav nav-tabs">
 
-                            <?php if (!$calculos["calculo"]["valores"]["totalKwh"]) { ?>
+                                <li><a data-toggle="tab" href="#menu2">Calculo Tarifa Normal</a></li>
+                                <li><a data-toggle="tab" href="#menu3">Calculo Tarifa Amarela</a></li>
+                                <li><a data-toggle="tab" href="#menu4">Calculo Tarifa Vermelha</a></li>
 
-                                <div>
-                                    <h4 class="alert alert-warning">Entre com o período a ser calculado.</h4>
-                                </div>
-                            <?php } else { ?>
-
-                                <div>
-                                    <h4 class="alert alert-warning">Click nas abas e conheça seus valores para o período informado.</h4>
-                                </div>
-
-                                <ul class="nav nav-tabs">
-
-                                    <li><a data-toggle="tab" href="#menu2">Calculo Tarifa Normal</a></li>
-                                    <li><a data-toggle="tab" href="#menu3">Calculo Tarifa Amarela</a></li>
-                                    <li><a data-toggle="tab" href="#menu4">Calculo Tarifa Vermelha</a></li>
-
-                                </ul>
+                            </ul>
 
 
-                                <div class="tab-content">
+                            <div class="tab-content">
 
-
-
-                                    <div id="menu2" class="tab-pane fade">
-                                        <div class="panel-body">
-                                            <div class="table-responsive">
-                                                <?php if ($calculos["calculo"]["valores"]["totalKwh"]) : ?>
-                                                    <?php include ('tabelaTarifaNormal.php'); ?> 
-                                                <?php endif; ?>
-                                            </div>
+                                <div id="menu2" class="tab-pane fade">
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <?php if ($calculos["totalKwh"]) : ?>
+                                                <?php include ('tabelaTarifaNormal.php'); ?> 
+                                            <?php endif; ?>
                                         </div>
                                     </div>
-                                    <div id="menu3" class="tab-pane fade">
-                                        <div class="panel-body">
-                                            <div class="table-responsive">
-                                                <?php if ($calculos["calculo"]["valores"]["totalKwh"]) : ?>
-                                                    <?php include ('tabelaTarifaAmarela.php'); ?> 
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="menu4" class="tab-pane fade">
-                                        <div class="panel-body">
-                                            <div class="table-responsive">
-                                                <?php if ($calculos["calculo"]["valores"]["totalKwh"]) : ?>
-                                                    <?php include ('tabelaTarifaVermelha.php'); ?> 
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-                            <?php } ?>
+                                <div id="menu3" class="tab-pane fade">
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <?php if ($calculos["totalKwh"]) : ?>
+                                                <?php include ('tabelaTarifaAmarela.php'); ?> 
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu4" class="tab-pane fade">
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <?php if ($calculos["totalKwh"]) : ?>
+                                                <?php include ('tabelaTarifaVermelha.php'); ?> 
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
 
                         </div>
 
