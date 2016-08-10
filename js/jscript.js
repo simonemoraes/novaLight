@@ -12,17 +12,31 @@ $('#id_navbarCollapse').on('hide.bs.collapse', function () {
             'transform: translate(-50%, -50%)');
 });
 
-/* Fim do evento do menu em conjunto com o banner */
-
-//$(window).load(function () {
-//    if (window.screen.availWidth < 465) {
-//        $("h1, h4").remove();
-//        $("#id_div_index").append(
-//                "<h4>Bem Vindo a NovaLight!</h4>",
-//                " <h6>Aqui você controla o seu consumo diário de energia elétrica.</h6>");
-//    } 
-//})
 
 
 
 
+$('#div_mensagem').find('p').each(function () {
+
+    var id = $(this).attr('id');
+
+    if (id == "sucesso") {
+
+        $("#btn_novoCalculo").show();
+    }
+});
+
+$('.id_accordion').click(function () {
+    $('#div_mensagem').find('p').fadeOut(1000);
+});
+
+
+$("#btn_novoCalculo").click(function () {
+    $("#dataInicial").prop('disabled', true);
+    $("#dataFinal").prop('disabled', true);
+
+    $("#form_calculo").each(function (e) {
+        e.preventDefault();
+        $(this).reset();
+    });
+});

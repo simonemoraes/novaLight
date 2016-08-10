@@ -92,7 +92,7 @@ html, body {
 /* Fim - cabeçalho e rodapé */
 
 /* panel e table */
-.panel_registros {
+.panel_registros_consumo, .panel_registros {
     margin-top: 60px;
 }
 
@@ -103,6 +103,10 @@ html, body {
 .panel-default>.panel-heading {
     background-color: #ccc;
     border-color: #999;
+}
+
+.table {
+    margin-bottom: 0;
 }
 
 .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, 
@@ -130,7 +134,7 @@ html, body {
 /* Fim - Pagina Registro de consumo */
 
 /* Pagina Registro de consumo */
-#id_sectionRegistroTarifas {
+#id_sectionRegistroTarifas, #id_sectionCalculoConta {
     background-color: #FFCC80;
 }
 /* Fim - Pagina Registro de consumo */

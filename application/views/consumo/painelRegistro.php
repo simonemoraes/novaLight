@@ -44,7 +44,8 @@
         <div class="row">
 
             <div class="col-md-2 col-sm-offset-2 col-sm-3 col-xs-offset-4 col-xs-8">
-                <button style="width: 100%;" class="btn btn-info">Salvar</button>
+                <button style="width: 100%;" class="btn btn-info">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp;Salvar</button>
             </div>
 
         </div>

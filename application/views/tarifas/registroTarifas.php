@@ -8,7 +8,7 @@
             <form method="post" action="<?= base_url("index.php/tarifas_control/atualizaTarifas") ?>">
 
                 <div class="panel panel-default panel_registros" id="panel_registroTarifas">
-                    <div class="panel-heading">Registro das Tarifas</div>
+                    <div class="panel-heading text-center"><h4><strong>Registro das Tarifas</strong></h4></div>
                     <div class="panel-body">
 
                         <div class="form-group">
@@ -68,7 +68,8 @@
                             <div class="row">
 
                                 <div class="col-md-2 col-sm-offset-2 col-sm-3 col-xs-offset-5 col-xs-7">
-                                    <button style="width: 100%;" class="btn btn-info">Salvar</button>
+                                    <button style="width: 100%;" class="btn btn-info">
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp;Salvar</button>
                                 </div>
 
                             </div>

@@ -11,8 +11,8 @@
 
                 <?php include('mensagemRegistroConsumo.php') ?>
                 
-                <div class="panel panel-default panel_registros" id="panel_registroConsumo">
-                    <div class="panel-heading">Registro de Consumo Diário</div>
+                <div class="panel panel-default panel_registros_consumo" id="panel_registroConsumo">
+                    <div class="panel-heading text-center"><h4><strong>Registro de Consumo Diário</strong></h4></div>
                     <?php if ($consumo == NULL) : ?>
                         <?php include ('painelNovoRegistro.php'); ?>
                     <?php else : ?>

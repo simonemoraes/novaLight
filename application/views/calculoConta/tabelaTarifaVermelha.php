@@ -1,8 +1,6 @@
-<table class="table table-bordered">                                  
+<table class="table table-bordered" id="table_tarifaVermelha">                                  
     <tbody>
-        <tr>
-            <th class="align_th" colspan="4"><h4><strong>Adicional Bandeira Vermelha</strong></h4></th>
-        </tr>
+        
         <tr>
             <th class="align_th"><strong>Descrição</strong></th>
             <th class="align_th"><strong>Quant. Kwh</strong></th>
