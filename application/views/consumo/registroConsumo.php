@@ -1,8 +1,8 @@
 
 
 <section id="id_sectionRegistroConsumo">
-    
-    
+
+
 
     <div class="container">
         <div class="col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10 col-xs-12">
@@ -10,7 +10,7 @@
             <form method="post" action="<?= base_url("index.php/consumomes_control/salvaConsumo") ?>">
 
                 <?php include('mensagemRegistroConsumo.php') ?>
-                
+
                 <div class="panel panel-default panel_registros_consumo" id="panel_registroConsumo">
                     <div class="panel-heading text-center"><h4><strong>Registro de Consumo Diário</strong></h4></div>
                     <?php if ($consumo == NULL) : ?>
@@ -33,14 +33,15 @@
 
                                     <?php foreach ($listas as $value): ?>
                                         <tr>
-                                            <td class="align_td" hidden="true"><?= $value['id'] ?></td>
-                                            <td class="align_td"><?= dataMysqlParaPtBr($value['data']) ?></td>
-                                            <td class="align_td"><?= $value['medida'] ?></td>
-                                            <td class="align_td"><?= $value['medida_anterior'] ?></td>
-                                            <td class="align_td"><?= $value['total_kwh'] ?></td>
+                                            
+                                    <td class="align_td" hidden="true"><?= $value['id'] ?></td>
+                                    <td class="align_td"><?= dataMysqlParaPtBr($value['data']) ?></td>
+                                    <td class="align_td"><?= $value['medida'] ?></td>
+                                    <td class="align_td"><?= $value['medida_anterior'] ?></td>
+                                    <td class="align_td"><?= $value['total_kwh'] ?></td>
 
-                                        </tr>
-                                    <?php endforeach; ?>
+                                    </tr>
+                                <?php endforeach; ?>
 
 
                                 </tbody>
